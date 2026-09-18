@@ -9,12 +9,11 @@ if (!messageFile) {
 
 const subject = readFileSync(messageFile, 'utf8').split(/\r?\n/, 1)[0].trim();
 const type = '(?:feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)';
-const scope = '(?:\\([a-z0-9._/-]+\\))?';
-const pattern = new RegExp(`^${type}${scope}(?:!)?: .+`);
+const pattern = new RegExp(`^${type}\\(#[1-9]\\d*\\): \\p{Extended_Pictographic}\\uFE0F? .+`, 'u');
 
 if (!pattern.test(subject)) {
 	console.error('Invalid commit message.');
-	console.error('Use: type(optional-scope): message');
-	console.error('Example: feat(portfolio): add project showcase');
+	console.error('Use: type(#issue): emoji message');
+	console.error('Example: feat(#19): ✨ add link analytics');
 	process.exit(1);
 }
