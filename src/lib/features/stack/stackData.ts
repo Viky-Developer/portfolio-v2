@@ -105,16 +105,17 @@ export const stackCategories: StackCategory[] = [
 	}
 ];
 
-export const stackYamlContent = `# stack.yaml — Production environment & engineering capabilities
-backend:
-  - Go (Primary)
-  - Gin
-  - Microservices
-  - Distributed Systems
-  - Event-Driven Architecture
-  - REST APIs
-  - Clean Architecture
-  - CQRS
+export const stackYamlContent = `backend:
+  primary: Go
+  framework:
+    - Gin
+  architecture:
+    - Microservices
+    - Distributed Systems
+    - Event-Driven Architecture
+    - REST APIs
+    - Clean Architecture
+    - CQRS
 
 data:
   - PostgreSQL
@@ -125,16 +126,17 @@ data:
   - Valkey
 
 cloud:
-  - AWS (Provider)
-  - EC2
-  - S3
-  - KMS
-  - RDS
-  - DynamoDB
-  - Lambda
-  - SQS
-  - SNS
-  - CloudWatch
+  provider: AWS
+  services:
+    - EC2
+    - S3
+    - KMS
+    - RDS
+    - DynamoDB
+    - Lambda
+    - SQS
+    - SNS
+    - CloudWatch
 
 infrastructure:
   - Docker
@@ -153,13 +155,6 @@ security:
   - AES-256
   - AWS KMS
   - JWT
-
-languages:
-  - Go
-  - Java
-  - SQL
-  - JavaScript
-  - Lua
 
 practices:
   - TDD

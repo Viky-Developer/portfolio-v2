@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Tag, ArrowRightIcon, FileTextIcon } from '$lib';
+	import { Button, Tag, ArrowRightIcon } from '$lib';
 
 	interface Metric {
 		value: string;
@@ -53,11 +53,7 @@
 			<span>Explore My Work</span>
 			<ArrowRightIcon size={14} />
 		</Button>
-		<Button href="/resume.pdf" target="_blank" rel="noreferrer" variant="secondary" size="md">
-			<FileTextIcon size={14} />
-			<span>Resume ↓</span>
-		</Button>
-		<Button href="#contact" variant="outline" size="md">
+		<Button href="#contact" variant="secondary" size="md">
 			<span>Get in Touch</span>
 		</Button>
 	</div>

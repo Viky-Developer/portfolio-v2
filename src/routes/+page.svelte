@@ -1,12 +1,7 @@
 <script lang="ts">
-	import { Hero, About, Experience, Projects, Stack, Tag } from '$lib';
+	import { Hero, About, Experience, Projects, Stack, Background, Tag } from '$lib';
 
 	const remainingSections = [
-		{
-			id: 'background',
-			title: 'Background Section',
-			desc: 'Academic foundation and certifications (upcoming issue).'
-		},
 		{
 			id: 'contact',
 			title: 'Contact Section',
@@ -19,7 +14,7 @@
 	<title>Vignesh S — Backend Software Engineer</title>
 </svelte:head>
 
-<main class="mx-auto max-w-5xl space-y-12 px-4 py-6 sm:px-8 sm:py-10">
+<main class="mx-auto w-full max-w-5xl min-w-0 space-y-12 px-4 py-6 sm:px-8 sm:py-10">
 	<!-- Hero / Engineering Workspace -->
 	<Hero />
 
@@ -34,6 +29,9 @@
 
 	<!-- Stack / stack.yaml -->
 	<Stack />
+
+	<!-- Background / Education & Certifications -->
+	<Background />
 
 	<!-- Remaining Sections Anchor Targets (for navbar scrollspy & upcoming features) -->
 	<section class="space-y-6 pt-4">

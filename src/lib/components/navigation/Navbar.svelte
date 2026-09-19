@@ -144,9 +144,9 @@
 		<div class="flex shrink-0 items-center">
 			<a
 				href={resolve('/')}
-				class="rounded-[4px] font-mono text-[14px] font-semibold tracking-wider text-text-primary transition-colors duration-150 hover:text-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-hidden"
+				class="rounded-sm font-mono text-[14px] font-semibold tracking-wider text-text-primary transition-colors duration-150 hover:text-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-hidden"
 			>
-				VIGNESH.DEV
+				VIGNESH
 			</a>
 		</div>
 
@@ -164,12 +164,10 @@
 
 		<!-- Right: Resume CTA & Mobile Menu Button -->
 		<div class="flex shrink-0 items-center gap-2 sm:gap-3">
-			<div class="hidden shrink-0 sm:block">
-				<Button href="/resume.pdf" target="_blank" rel="noreferrer" variant="outline" size="sm">
-					<FileTextIcon size={14} />
-					<span>Resume ↓</span>
-				</Button>
-			</div>
+			<Button href="/resume.pdf" target="_blank" rel="noreferrer" variant="outline" size="sm">
+				<FileTextIcon size={14} />
+				<span>Resume ↓</span>
+			</Button>
 
 			<!-- Mobile Menu Button -->
 			<button

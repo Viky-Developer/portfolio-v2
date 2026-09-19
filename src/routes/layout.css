@@ -94,6 +94,14 @@ html {
 	font-family: var(--font-sans);
 	color: var(--color-text-primary);
 	background-color: var(--color-background);
+	overflow-x: hidden;
+	max-width: 100%;
+}
+
+body {
+	overflow-x: hidden;
+	max-width: 100%;
+	min-height: 100vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {
