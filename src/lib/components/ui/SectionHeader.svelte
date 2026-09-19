@@ -1,6 +1,6 @@
 <script lang="ts">
 	interface Props {
-		index: string;
+		index?: string;
 		title: string;
 		description?: string;
 		class?: string;
@@ -14,7 +14,11 @@
 		<span
 			class="font-mono text-[11px] font-semibold tracking-[0.02em] text-accent uppercase sm:text-[12px]"
 		>
-			{index} / {title}
+			{#if index}
+				{index} / {title}
+			{:else}
+				{title}
+			{/if}
 		</span>
 		<div class="h-px flex-1 bg-divider" aria-hidden="true"></div>
 	</div>

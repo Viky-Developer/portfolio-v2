@@ -83,9 +83,8 @@
 </script>
 
 <section id="experience" class="scroll-mt-24 space-y-8" aria-labelledby="experience-title">
-	<!-- Section Header: 03 / EXPERIENCE -->
+	<!-- Section Header: EXPERIENCE -->
 	<SectionHeader
-		index="03"
 		title="Experience"
 		description="Engineering history — A timeline of the systems, infrastructure and payment products I've worked on."
 	/>
