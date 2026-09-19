@@ -1,0 +1,27 @@
+<script lang="ts">
+	import type { SVGAttributes } from 'svelte/elements';
+
+	interface Props extends SVGAttributes<SVGSVGElement> {
+		size?: number | string;
+		class?: string;
+	}
+
+	let { size = 16, class: className = '', ...restProps }: Props = $props();
+</script>
+
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	width={size}
+	height={size}
+	viewBox="0 0 24 24"
+	fill="none"
+	stroke="currentColor"
+	stroke-width="2"
+	stroke-linecap="round"
+	stroke-linejoin="round"
+	class={className}
+	aria-hidden="true"
+	{...restProps}
+>
+	<polyline points="20 6 9 17 4 12" />
+</svg>

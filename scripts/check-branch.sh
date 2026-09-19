@@ -16,11 +16,12 @@ for allowed in $ALLOWED_BRANCHES; do
   fi
 done
 
-if ! [[ "$branch" =~ ^(feat|refactor|bug|fix|chore|hotfix)/.+ ]]; then
+if ! [[ "$branch" =~ ^(feat|refactor|bug|fix|chore|hotfix|release)/.+ ]]; then
   echo "error: invalid branch name '$branch'" >&2
   echo "" >&2
   echo "expected a context prefix before the branch name:" >&2
   echo "  feat/<name>     - new features" >&2
+  echo "  release/<name>  - release versions" >&2
   echo "  refactor/<name> - refactoring existing code" >&2
   echo "  bug/<name>      - bug fixes" >&2
   echo "  fix/<name>      - immediate fixes merged to dev/main" >&2

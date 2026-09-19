@@ -25,3 +25,6 @@ vite.config.ts.timestamp-*
 test-results
 
 AGENTS.md
+
+# GitNexus (local codebase index)
+.gitnexus/
