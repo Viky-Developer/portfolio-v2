@@ -11,12 +11,8 @@
 </script>
 
 <section id="about" class="scroll-mt-24 space-y-8" aria-labelledby="about-title">
-	<!-- Section Header: 02 / ABOUT -->
-	<SectionHeader
-		index="02"
-		title="About"
-		description="Background, engineering focus, and core philosophy."
-	/>
+	<!-- Section Header: ABOUT -->
+	<SectionHeader title="About" description="Background, engineering focus, and core philosophy." />
 
 	<!-- README.md Container -->
 	<Card hoverable={false} padding="none" class="overflow-hidden">
