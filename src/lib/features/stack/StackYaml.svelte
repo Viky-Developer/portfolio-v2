@@ -1,21 +1,6 @@
 <script lang="ts">
-	import { CodePanel, CopyIcon, CheckIcon, Tag } from '$lib';
+	import { CodePanel, Tag } from '$lib';
 	import { stackYamlContent } from './stackData';
-
-	let isCopied = $state(false);
-
-	async function copyToClipboard() {
-		try {
-			await navigator.clipboard.writeText(stackYamlContent);
-			isCopied = true;
-			setTimeout(() => {
-				isCopied = false;
-			}, 2000);
-		} catch {
-			// Fallback if clipboard API is restricted
-			isCopied = false;
-		}
-	}
 
 	interface Token {
 		text: string;
@@ -88,26 +73,10 @@
 		});
 </script>
 
-<div class="space-y-3">
+<div class="w-full max-w-full min-w-0 space-y-3">
 	<CodePanel title="STACK / stack.yaml">
 		{#snippet headerRight()}
-			<div class="flex items-center gap-2">
-				<Tag variant="default" size="sm">yaml</Tag>
-				<button
-					type="button"
-					onclick={copyToClipboard}
-					class="flex items-center gap-1.5 rounded-[4px] border border-border/80 bg-surface-elevated px-2 py-1 font-mono text-[11px] text-text-secondary transition-colors hover:border-accent hover:text-text-primary focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-hidden"
-					aria-label={isCopied ? 'Copied YAML to clipboard' : 'Copy YAML to clipboard'}
-				>
-					{#if isCopied}
-						<CheckIcon size={12} class="text-status-active" />
-						<span class="text-status-active">Copied!</span>
-					{:else}
-						<CopyIcon size={12} />
-						<span>Copy YAML</span>
-					{/if}
-				</button>
-			</div>
+			<Tag variant="default" size="sm">yaml</Tag>
 		{/snippet}
 
 		<div class="font-mono text-[12px] leading-relaxed sm:text-[13px]">
@@ -128,15 +97,15 @@
 		</div>
 
 		{#snippet footer()}
-			<div class="flex w-full flex-wrap items-center justify-between gap-2 text-[11px]">
-				<div class="flex items-center gap-3">
+			<div class="flex w-full min-w-0 flex-wrap items-center justify-between gap-2 text-[11px]">
+				<div class="flex flex-wrap items-center gap-2 sm:gap-3">
 					<span>format: <span class="text-accent">YAML</span></span>
 					<span>•</span>
 					<span>schema: <span class="text-text-secondary">v1.0.0</span></span>
 					<span>•</span>
 					<span>encoding: <span class="text-text-secondary">UTF-8</span></span>
 				</div>
-				<div class="flex items-center gap-1.5">
+				<div class="flex shrink-0 items-center gap-1.5">
 					<span class="bg-status-active inline-block h-1.5 w-1.5 rounded-full"></span>
 					<span class="text-status-active font-medium">valid config</span>
 				</div>

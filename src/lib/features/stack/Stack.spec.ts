@@ -85,8 +85,8 @@ describe('Stack Section Specifications & Contracts', () => {
 
 	it('contains valid and complete stack.yaml content matching design.md', () => {
 		expect(stackYamlContent).toContain('backend:');
-		expect(stackYamlContent).toContain('- Go (Primary)');
-		expect(stackYamlContent).toContain('- AWS (Provider)');
+		expect(stackYamlContent).toContain('primary: Go');
+		expect(stackYamlContent).toContain('provider: AWS');
 		expect(stackYamlContent).toContain('messaging:\n  - RabbitMQ');
 		expect(stackYamlContent).toContain('practices:\n  - TDD');
 	});

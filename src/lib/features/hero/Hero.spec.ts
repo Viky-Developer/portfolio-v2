@@ -7,7 +7,6 @@ describe('Hero Section Specifications & Contracts', () => {
 		bioKeyword: 'Go',
 		ctas: [
 			{ label: 'Explore My Work', href: '#projects' },
-			{ label: 'Resume ↓', href: '/resume.pdf' },
 			{ label: 'Get in Touch', href: '#contact' }
 		],
 		metrics: [
@@ -24,11 +23,10 @@ describe('Hero Section Specifications & Contracts', () => {
 		expect(heroContract.headline).toContain('digital payments');
 	});
 
-	it('provides all 3 primary action CTAs with correct destinations', () => {
-		expect(heroContract.ctas).toHaveLength(3);
+	it('provides focused primary action CTAs with correct destinations', () => {
+		expect(heroContract.ctas).toHaveLength(2);
 		expect(heroContract.ctas[0].href).toBe('#projects');
-		expect(heroContract.ctas[1].href).toBe('/resume.pdf');
-		expect(heroContract.ctas[2].href).toBe('#contact');
+		expect(heroContract.ctas[1].href).toBe('#contact');
 	});
 
 	it('includes all 4 key metrics matching design.md section 8', () => {
