@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Vignesh S — Backend Software Engineer</title>
+	<title>Vignesh S - Backend Software Engineer</title>
 </svelte:head>
 
 <main class="mx-auto w-full max-w-5xl min-w-0 space-y-12 px-4 py-6 sm:px-8 sm:py-10">
