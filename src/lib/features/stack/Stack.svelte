@@ -31,12 +31,14 @@
 			<span class="text-text-muted/60">·</span>
 			<span class="text-text-secondary">Security</span>
 			<span class="text-text-muted/60">·</span>
+			<span class="text-text-secondary">Frontend</span>
+			<span class="text-text-muted/60">·</span>
 			<span class="text-text-secondary">Practices</span>
 		</div>
 
 		<!-- View Switcher (YAML vs Categorical) -->
 		<div
-			class="inline-flex shrink-0 items-center self-start rounded-[6px] border border-divider bg-surface-primary p-1 font-mono text-xs select-none sm:self-auto"
+			class="inline-flex shrink-0 items-center self-start rounded-md border border-divider bg-surface-primary p-1 font-mono text-xs select-none sm:self-auto"
 			role="tablist"
 			aria-label="Stack view options"
 		>
@@ -45,7 +47,7 @@
 				role="tab"
 				aria-selected={activeView === 'yaml'}
 				onclick={() => (activeView = 'yaml')}
-				class="rounded-[4px] px-3 py-1.5 transition-colors duration-150 {activeView === 'yaml'
+				class="rounded-sm px-3 py-1.5 transition-colors duration-150 {activeView === 'yaml'
 					? 'bg-surface-elevated font-medium text-accent shadow-xs'
 					: 'text-text-muted hover:text-text-primary'}"
 			>
@@ -57,7 +59,7 @@
 				role="tab"
 				aria-selected={activeView === 'categories'}
 				onclick={() => (activeView = 'categories')}
-				class="rounded-[4px] px-3 py-1.5 transition-colors duration-150 {activeView === 'categories'
+				class="rounded-sm px-3 py-1.5 transition-colors duration-150 {activeView === 'categories'
 					? 'bg-surface-elevated font-medium text-accent shadow-xs'
 					: 'text-text-muted hover:text-text-primary'}"
 			>

@@ -21,7 +21,7 @@
 </script>
 
 <div
-	class="flex w-full max-w-full min-w-0 flex-col overflow-hidden rounded-[6px] border border-border bg-canvas-secondary font-mono text-[12px] text-text-code shadow-card sm:text-[13px] {className}"
+	class="flex w-full max-w-full min-w-0 flex-col overflow-hidden rounded-md border border-border bg-canvas-secondary font-mono text-[12px] text-text-code shadow-card sm:text-[13px] {className}"
 	{...restProps}
 >
 	<!-- Terminal Header / Titlebar -->
@@ -31,9 +31,9 @@
 		<div class="flex min-w-0 items-center gap-2">
 			<!-- Window dots -->
 			<div class="flex shrink-0 items-center gap-1.5" aria-hidden="true">
-				<span class="inline-block h-2.5 w-2.5 rounded-full bg-[#c98373]/80"></span>
+				<span class="inline-block h-2.5 w-2.5 rounded-full bg-status-error/80"></span>
 				<span class="inline-block h-2.5 w-2.5 rounded-full bg-[#a3907c]/80"></span>
-				<span class="inline-block h-2.5 w-2.5 rounded-full bg-[#78c990]/80"></span>
+				<span class="inline-block h-2.5 w-2.5 rounded-full bg-status-success/80"></span>
 			</div>
 
 			{#if title}

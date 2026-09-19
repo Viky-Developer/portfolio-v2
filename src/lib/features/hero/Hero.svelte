@@ -9,7 +9,7 @@
 
 	const metrics: Metric[] = [
 		{ value: '2+ Years', label: 'Backend Experience' },
-		{ value: '15+', label: 'APIs Built' },
+		{ value: '30+', label: 'APIs Built' },
 		{ value: 'FinTech', label: 'Domain Focus', highlight: true },
 		{ value: '< 10ms', label: 'Target Latency' }
 	];

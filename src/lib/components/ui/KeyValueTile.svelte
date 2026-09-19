@@ -13,7 +13,7 @@
 </script>
 
 <div
-	class="flex flex-col justify-between gap-1.5 rounded-[6px] border border-border bg-surface-primary p-4 shadow-card transition-shadow duration-150 {className}"
+	class="flex flex-col justify-between gap-1.5 rounded-md border border-border bg-surface-primary p-4 shadow-card transition-shadow duration-150 {className}"
 >
 	<span class="font-mono text-[11px] font-medium tracking-[0.02em] text-text-muted uppercase">
 		{label}

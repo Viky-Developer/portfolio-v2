@@ -14,7 +14,7 @@
 <a
 	{href}
 	{onclick}
-	class="group relative inline-flex items-center rounded-[4px] px-2 py-1.5 font-sans text-[13px] whitespace-nowrap transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-hidden lg:px-3 lg:py-2 lg:text-[14px] {active
+	class="group relative inline-flex items-center rounded-sm px-2 py-1.5 font-sans text-[13px] whitespace-nowrap transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-hidden lg:px-3 lg:py-2 lg:text-[14px] {active
 		? 'font-medium text-accent'
 		: 'text-text-secondary hover:text-text-primary'} {className}"
 	aria-current={active ? 'location' : undefined}

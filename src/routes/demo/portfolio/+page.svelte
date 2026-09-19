@@ -22,7 +22,7 @@
 <main class="mx-auto max-w-5xl space-y-20 px-4 py-12 sm:px-8">
 	<!-- Demo Notice Banner -->
 	<div
-		class="flex items-center justify-between rounded-[6px] border border-border bg-surface-elevated px-4 py-3 text-xs"
+		class="flex items-center justify-between rounded-md border border-border bg-surface-elevated px-4 py-3 text-xs"
 	>
 		<div class="flex items-center gap-2">
 			<Tag variant="accent">Demo Route</Tag>
@@ -57,9 +57,15 @@
 				<span>Explore My Work</span>
 				<ArrowRightIcon size={14} />
 			</Button>
-			<Button href="/resume.pdf" target="_blank" rel="noreferrer" variant="secondary" size="md">
+			<Button
+				href="/Vignesh_Resume.pdf"
+				target="_blank"
+				rel="noreferrer"
+				variant="secondary"
+				size="md"
+			>
 				<FileTextIcon size={14} />
-				<span>Resume ↓</span>
+				<span>Resume ↗</span>
 			</Button>
 			<Button href={resolve('/demo/components')} variant="outline" size="md">
 				<span>Components Showcase</span>
@@ -75,7 +81,7 @@
 				</div>
 			</div>
 			<div class="space-y-1">
-				<div class="font-sans text-2xl font-semibold text-text-primary tabular-nums">15+</div>
+				<div class="font-sans text-2xl font-semibold text-text-primary tabular-nums">30+</div>
 				<div class="font-mono text-[11px] tracking-wider text-text-muted uppercase">APIs Built</div>
 			</div>
 			<div class="space-y-1">
@@ -199,7 +205,7 @@
 			description="Technical environment, runtimes, and engineering practices."
 		/>
 
-		<div class="space-y-6 rounded-[6px] border border-border bg-surface-primary p-6">
+		<div class="space-y-6 rounded-md border border-border bg-surface-primary p-6">
 			<div class="space-y-3">
 				<h3 class="font-mono text-xs font-semibold tracking-wider text-accent uppercase">
 					backend:
@@ -288,7 +294,7 @@
 		/>
 
 		<div
-			class="flex flex-col gap-6 rounded-[6px] border border-border bg-surface-primary p-6 shadow-card sm:flex-row sm:items-center sm:justify-between sm:p-8"
+			class="flex flex-col gap-6 rounded-md border border-border bg-surface-primary p-6 shadow-card sm:flex-row sm:items-center sm:justify-between sm:p-8"
 		>
 			<div class="space-y-2">
 				<div class="flex items-center gap-2">

@@ -6,5 +6,6 @@ export * from './features/experience';
 export * from './features/projects';
 export * from './features/stack';
 export * from './features/background';
+export * from './features/contact';
 export * from './types/theme';
 export * from './constants/theme';

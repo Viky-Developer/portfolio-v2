@@ -7,9 +7,18 @@ describe('Projects Section Specifications & Contracts', () => {
 		projects: [
 			{
 				id: 'url-shortener',
-				name: 'url-shortener',
+				name: 'linkpulse',
 				visibility: 'public',
-				technologies: ['Go', 'Redis', 'PostgreSQL', 'RabbitMQ', 'REST API', 'Docker'],
+				technologies: [
+					'Go',
+					'Redis',
+					'PostgreSQL',
+					'RabbitMQ',
+					'Prometheus',
+					'Grafana',
+					'Docker',
+					'REST API'
+				],
 				metric: '< 10ms',
 				features: [
 					'Base62 encoding',
@@ -18,6 +27,8 @@ describe('Projects Section Specifications & Contracts', () => {
 					'Rate limiting',
 					'Link expiration'
 				],
+				githubUrl: 'https://github.com/Viky-Developer/url-shortner',
+				liveUrl: 'https://linkpulse.netlify.app/',
 				hasInteractiveConsole: true
 			}
 		],
@@ -34,19 +45,22 @@ describe('Projects Section Specifications & Contracts', () => {
 		expect(projectsContract.title).toBe('Projects');
 	});
 
-	it('includes the flagship url-shortener project with full stack and sub-10ms metric', () => {
+	it('includes the flagship linkpulse project with full stack, live demo, and sub-10ms metric', () => {
 		const urlShortener = projectsContract.projects.find((p) => p.id === 'url-shortener');
 		expect(urlShortener).toBeDefined();
-		expect(urlShortener?.name).toBe('url-shortener');
+		expect(urlShortener?.name).toBe('linkpulse');
 		expect(urlShortener?.visibility).toBe('public');
 		expect(urlShortener?.technologies).toContain('Go');
 		expect(urlShortener?.technologies).toContain('Redis');
 		expect(urlShortener?.technologies).toContain('PostgreSQL');
 		expect(urlShortener?.technologies).toContain('RabbitMQ');
+		expect(urlShortener?.technologies).toContain('Prometheus');
+		expect(urlShortener?.technologies).toContain('Grafana');
 		expect(urlShortener?.technologies).toContain('Docker');
 		expect(urlShortener?.metric).toBe('< 10ms');
 		expect(urlShortener?.features).toContain('Base62 encoding');
 		expect(urlShortener?.features).toContain('RabbitMQ async analytics');
+		expect(urlShortener?.liveUrl).toBe('https://linkpulse.netlify.app/');
 		expect(urlShortener?.hasInteractiveConsole).toBe(true);
 	});
 

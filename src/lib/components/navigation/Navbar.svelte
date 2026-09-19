@@ -24,8 +24,12 @@
 
 	let isMobileMenuOpen = $state(false);
 	let activeSection = $state('');
+	let isClickScrolling = false;
+	let clickScrollTimer: ReturnType<typeof setTimeout> | undefined;
 
 	function updateActiveSection() {
+		if (isClickScrolling) return;
+
 		const headerOffset = 110;
 		let current = '';
 
@@ -73,6 +77,11 @@
 
 	function handleNavClick(id: string) {
 		activeSection = id;
+		isClickScrolling = true;
+		if (clickScrollTimer) clearTimeout(clickScrollTimer);
+		clickScrollTimer = setTimeout(() => {
+			isClickScrolling = false;
+		}, 800);
 		closeMobileMenu();
 	}
 
@@ -128,6 +137,7 @@
 		window.addEventListener('hashchange', onHashChange);
 
 		return () => {
+			if (clickScrollTimer) clearTimeout(clickScrollTimer);
 			window.removeEventListener('scroll', onScroll);
 			window.removeEventListener('hashchange', onHashChange);
 		};
@@ -164,9 +174,15 @@
 
 		<!-- Right: Resume CTA & Mobile Menu Button -->
 		<div class="flex shrink-0 items-center gap-2 sm:gap-3">
-			<Button href="/resume.pdf" target="_blank" rel="noreferrer" variant="outline" size="sm">
+			<Button
+				href="/Vignesh_Resume.pdf"
+				target="_blank"
+				rel="noreferrer"
+				variant="outline"
+				size="sm"
+			>
 				<FileTextIcon size={14} />
-				<span>Resume ↓</span>
+				<span>Resume ↗</span>
 			</Button>
 
 			<!-- Mobile Menu Button -->
@@ -176,7 +192,7 @@
 				aria-expanded={isMobileMenuOpen}
 				aria-controls="mobile-navigation"
 				aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-				class="flex h-10 w-10 items-center justify-center rounded-[4px] border border-border bg-surface-elevated text-text-primary transition-colors duration-150 hover:border-accent/40 hover:text-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-hidden md:hidden"
+				class="flex h-10 w-10 items-center justify-center rounded-sm border border-border bg-surface-elevated text-text-primary transition-colors duration-150 hover:border-accent/40 hover:text-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-hidden md:hidden"
 			>
 				{#if isMobileMenuOpen}
 					<CloseIcon size={20} />
@@ -227,7 +243,7 @@
 		<!-- Drawer Footer Actions -->
 		<div class="border-t border-divider pt-6">
 			<Button
-				href="/resume.pdf"
+				href="/Vignesh_Resume.pdf"
 				target="_blank"
 				rel="noreferrer"
 				variant="outline"
@@ -235,7 +251,7 @@
 				class="w-full justify-center"
 			>
 				<FileTextIcon size={16} />
-				<span>Resume ↓</span>
+				<span>Resume ↗</span>
 			</Button>
 		</div>
 	</div>

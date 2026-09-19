@@ -26,7 +26,7 @@
 </script>
 
 <span
-	class="inline-flex items-center rounded-[4px] font-mono select-none {variantClasses[
+	class="inline-flex items-center rounded-sm font-mono select-none {variantClasses[
 		variant
 	]} {sizeClasses[size]} {className}"
 >

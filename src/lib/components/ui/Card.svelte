@@ -27,7 +27,7 @@
 </script>
 
 <div
-	class="overflow-hidden rounded-[6px] border border-border bg-surface-primary text-text-primary shadow-card transition-shadow duration-150 {hoverable
+	class="overflow-hidden rounded-md border border-border bg-surface-primary text-text-primary shadow-card transition-shadow duration-150 {hoverable
 		? 'hover:shadow-card-hover'
 		: ''} {className}"
 	{...restProps}

@@ -1,13 +1,5 @@
 <script lang="ts">
-	import { Hero, About, Experience, Projects, Stack, Background, Tag } from '$lib';
-
-	const remainingSections = [
-		{
-			id: 'contact',
-			title: 'Contact Section',
-			desc: 'Terminal-styled contact interface (upcoming issue).'
-		}
-	];
+	import { Hero, About, Experience, Projects, Stack, Background, Contact } from '$lib';
 </script>
 
 <svelte:head>
@@ -33,32 +25,36 @@
 	<!-- Background / Education & Certifications -->
 	<Background />
 
-	<!-- Remaining Sections Anchor Targets (for navbar scrollspy & upcoming features) -->
-	<section class="space-y-6 pt-4">
-		<div class="border-b border-divider pb-2">
-			<span class="font-mono text-xs font-semibold tracking-wider text-text-muted uppercase">
-				Upcoming Portfolio Sections
-			</span>
-		</div>
+	<!-- Contact / Terminal Session -->
+	<Contact />
 
-		<div class="space-y-4">
-			{#each remainingSections as section (section.id)}
-				<div
-					id={section.id}
-					class="scroll-mt-24 space-y-2 rounded-[6px] border border-border bg-surface-primary/40 p-6 transition-colors duration-150 hover:bg-surface-primary/70"
-				>
-					<div class="flex items-center justify-between">
-						<span class="font-mono text-xs text-accent">#{section.id}</span>
-						<Tag variant="default" size="sm">upcoming section</Tag>
-					</div>
-					<h2 class="font-sans text-base font-semibold text-text-primary">
-						{section.title}
-					</h2>
-					<p class="text-sm text-text-secondary">
-						{section.desc}
-					</p>
-				</div>
-			{/each}
+	<!-- Editorial Footer -->
+	<footer
+		class="mt-16 border-t border-divider pt-8 pb-12 text-center sm:flex sm:items-center sm:justify-between sm:text-left"
+	>
+		<p class="font-mono text-xs text-text-secondary">
+			© {new Date().getFullYear()} Vignesh ·
+			<span class="text-accent">Backend Software Engineer</span>
+		</p>
+
+		<div
+			class="mt-4 flex items-center justify-center gap-4 font-mono text-xs text-text-muted sm:mt-0"
+		>
+			<a
+				href="#hero"
+				class="transition-colors duration-150 hover:text-accent focus-visible:text-accent focus-visible:outline-hidden"
+			>
+				Back to top ↑
+			</a>
+			<span class="text-text-muted/40" aria-hidden="true">·</span>
+			<a
+				href="https://github.com/Viky-Developer/portfolio-v2"
+				target="_blank"
+				rel="noreferrer noopener"
+				class="transition-colors duration-150 hover:text-accent focus-visible:text-accent focus-visible:outline-hidden"
+			>
+				Source Code
+			</a>
 		</div>
-	</section>
+	</footer>
 </main>
