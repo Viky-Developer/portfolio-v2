@@ -27,14 +27,14 @@
 </script>
 
 <div
-	class="overflow-hidden rounded-lg border border-border-subtle bg-surface-lowest shadow-card transition-shadow duration-150 {hoverable
+	class="overflow-hidden rounded-[6px] border border-border bg-surface-primary text-text-primary shadow-card transition-shadow duration-150 {hoverable
 		? 'hover:shadow-card-hover'
 		: ''} {className}"
 	{...restProps}
 >
 	{#if header}
 		<div
-			class="flex items-center justify-between gap-4 border-b border-border-subtle bg-surface-low px-4 py-3 sm:px-6"
+			class="flex items-center justify-between gap-4 border-b border-divider bg-surface-elevated px-4 py-3 sm:px-6"
 		>
 			{@render header()}
 		</div>

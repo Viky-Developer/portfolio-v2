@@ -21,10 +21,10 @@
 	}: Props = $props();
 
 	const statusDotColor: Record<StatusType, string> = {
-		healthy: 'bg-status-healthy',
-		warning: 'bg-status-warning',
+		healthy: 'bg-status-success',
+		warning: 'bg-accent',
 		error: 'bg-status-error',
-		idle: 'bg-status-idle'
+		idle: 'bg-text-muted'
 	};
 
 	const statusAriaLabels: Record<StatusType, string> = {
@@ -36,7 +36,7 @@
 </script>
 
 <div
-	class="inline-flex items-center rounded-full border border-border-subtle bg-surface-lowest {size ===
+	class="inline-flex items-center rounded-full border border-border bg-surface-elevated {size ===
 	'sm'
 		? 'gap-1.5 px-2.5 py-0.5 text-[11px]'
 		: 'gap-2 px-3 py-1 text-[12px] sm:text-[13px]'} font-mono text-text-primary select-none {className}"

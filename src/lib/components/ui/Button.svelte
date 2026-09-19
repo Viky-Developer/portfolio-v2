@@ -32,13 +32,13 @@
 
 	const variantClasses: Record<ButtonVariant, string> = {
 		primary:
-			'bg-text-strong text-on-dark hover:bg-black active:bg-neutral-950 border border-transparent shadow-xs',
+			'bg-accent text-background font-semibold hover:bg-accent-strong active:bg-accent border border-transparent shadow-xs',
 		secondary:
-			'bg-surface-lowest text-text-primary border border-border-subtle hover:bg-surface-low active:bg-surface-container shadow-xs',
+			'bg-surface-elevated text-text-primary border border-border hover:bg-surface-primary active:bg-canvas-secondary shadow-xs',
 		outline:
-			'bg-transparent text-text-primary border border-border-subtle hover:bg-surface-container active:bg-surface-high',
+			'bg-transparent text-text-secondary border border-border hover:text-accent hover:border-accent/40 active:bg-surface-elevated',
 		ghost:
-			'bg-transparent text-text-muted hover:text-text-primary hover:bg-surface-container active:bg-surface-high'
+			'bg-transparent text-text-muted hover:text-text-primary hover:bg-surface-elevated active:bg-surface-primary'
 	};
 
 	const sizeClasses: Record<ButtonSize, string> = {
@@ -48,7 +48,7 @@
 	};
 
 	const baseClasses =
-		'inline-flex items-center justify-center font-sans font-medium rounded-[4px] select-none transition-colors duration-150 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1 disabled:opacity-50 disabled:pointer-events-none cursor-pointer';
+		'inline-flex items-center justify-center whitespace-nowrap shrink-0 font-sans font-medium rounded-[4px] select-none transition-colors duration-150 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-1 focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none cursor-pointer';
 </script>
 
 {#if href !== undefined}

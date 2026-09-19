@@ -16,11 +16,11 @@
 		>
 			{index} / {title}
 		</span>
-		<div class="h-px flex-1 bg-border-subtle" aria-hidden="true"></div>
+		<div class="h-px flex-1 bg-divider" aria-hidden="true"></div>
 	</div>
 
 	{#if description}
-		<p class="max-w-2xl font-sans text-[13px] text-text-muted sm:text-[14px]">
+		<p class="max-w-2xl font-sans text-[13px] leading-relaxed text-text-secondary sm:text-[14px]">
 			{description}
 		</p>
 	{/if}
