@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
-	import { resolve } from '$app/paths';
+	import { resolve, asset } from '$app/paths';
 	import Button from '../ui/Button.svelte';
 	import NavLink from './NavLink.svelte';
 	import FileTextIcon from '../icons/FileTextIcon.svelte';
@@ -175,7 +175,7 @@
 		<!-- Right: Resume CTA & Mobile Menu Button -->
 		<div class="flex shrink-0 items-center gap-2 sm:gap-3">
 			<Button
-				href="/Vignesh_Resume.pdf"
+				href={asset('/Vignesh_Resume.pdf')}
 				target="_blank"
 				rel="noreferrer"
 				variant="outline"
@@ -243,7 +243,7 @@
 		<!-- Drawer Footer Actions -->
 		<div class="border-t border-divider pt-6">
 			<Button
-				href="/Vignesh_Resume.pdf"
+				href={asset('/Vignesh_Resume.pdf')}
 				target="_blank"
 				rel="noreferrer"
 				variant="outline"

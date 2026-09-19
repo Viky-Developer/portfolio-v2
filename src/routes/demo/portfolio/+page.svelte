@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { resolve, asset } from '$app/paths';
 	import {
 		Button,
 		Tag,
@@ -58,7 +58,7 @@
 				<ArrowRightIcon size={14} />
 			</Button>
 			<Button
-				href="/Vignesh_Resume.pdf"
+				href={asset('/Vignesh_Resume.pdf')}
 				target="_blank"
 				rel="noreferrer"
 				variant="secondary"
