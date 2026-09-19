@@ -1,12 +1,7 @@
 <script lang="ts">
-	import { Hero, About, Experience, Projects, Tag } from '$lib';
+	import { Hero, About, Experience, Projects, Stack, Tag } from '$lib';
 
 	const remainingSections = [
-		{
-			id: 'stack',
-			title: 'Stack Section',
-			desc: 'stack.yaml technical runtimes and infrastructure (upcoming issue).'
-		},
 		{
 			id: 'background',
 			title: 'Background Section',
@@ -25,17 +20,20 @@
 </svelte:head>
 
 <main class="mx-auto max-w-5xl space-y-12 px-4 py-6 sm:px-8 sm:py-10">
-	<!-- Section 01: Hero / Engineering Workspace -->
+	<!-- Hero / Engineering Workspace -->
 	<Hero />
 
-	<!-- Section 02: About / README.md -->
+	<!-- About / README.md -->
 	<About />
 
-	<!-- Section 03: Experience / Git History -->
+	<!-- Experience / Git History -->
 	<Experience />
 
-	<!-- Section 04: Projects / Repositories -->
+	<!-- Projects / Repositories -->
 	<Projects />
+
+	<!-- Stack / stack.yaml -->
+	<Stack />
 
 	<!-- Remaining Sections Anchor Targets (for navbar scrollspy & upcoming features) -->
 	<section class="space-y-6 pt-4">
