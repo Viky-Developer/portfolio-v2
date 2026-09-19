@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Hero, Tag } from '$lib';
+	import { Hero, About, Tag } from '$lib';
 
 	const remainingSections = [
 		{
@@ -34,9 +34,12 @@
 	<title>Vignesh S — Backend Software Engineer</title>
 </svelte:head>
 
-<main class="mx-auto max-w-5xl space-y-16 px-4 py-8 sm:px-8 sm:py-12">
+<main class="mx-auto max-w-5xl space-y-12 px-4 py-6 sm:px-8 sm:py-10">
 	<!-- Section 01: Hero / Engineering Workspace -->
 	<Hero />
+
+	<!-- Section 02: About / README.md -->
+	<About />
 
 	<!-- Remaining Sections Anchor Targets (for navbar scrollspy & upcoming features) -->
 	<section class="space-y-6 pt-4">
