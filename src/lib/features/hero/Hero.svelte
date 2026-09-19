@@ -25,11 +25,7 @@
 	];
 </script>
 
-<section
-	id="about"
-	class="scroll-mt-24 space-y-10 pt-4 pb-8 sm:pt-8 sm:pb-12"
-	aria-labelledby="hero-title"
->
+<section id="hero" class="scroll-mt-24 space-y-8 pt-2 sm:pt-4" aria-labelledby="hero-title">
 	<!-- Role & Main Heading -->
 	<div class="space-y-4">
 		<div class="flex items-center gap-2">
@@ -66,51 +62,51 @@
 		</Button>
 	</div>
 
-	<!-- Key Metrics Band -->
-	<div class="grid grid-cols-2 gap-4 border-t border-divider pt-6 sm:grid-cols-4 sm:gap-6">
-		{#each metrics as metric (metric.label)}
-			<div class="space-y-1">
-				<div
-					class="font-sans text-2xl font-semibold tabular-nums {metric.highlight
-						? 'text-accent uppercase'
-						: 'text-text-primary'}"
-				>
-					{metric.value}
+	<!-- Lower Metadata: Metrics & Technologies -->
+	<div class="space-y-6 border-t border-divider pt-6">
+		<!-- Key Metrics Band -->
+		<div class="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
+			{#each metrics as metric (metric.label)}
+				<div class="space-y-1">
+					<div
+						class="font-sans text-2xl font-semibold tabular-nums {metric.highlight
+							? 'text-accent uppercase'
+							: 'text-text-primary'}"
+					>
+						{metric.value}
+					</div>
+					<div class="font-mono text-[11px] tracking-wider text-text-muted uppercase">
+						{metric.label}
+					</div>
 				</div>
-				<div class="font-mono text-[11px] tracking-wider text-text-muted uppercase">
-					{metric.label}
-				</div>
-			</div>
-		{/each}
-	</div>
-
-	<!-- Core Technologies Metadata Strip -->
-	<div class="space-y-2.5">
-		<div class="font-mono text-[11px] tracking-wider text-text-muted uppercase">
-			Core Technologies
-		</div>
-		<div class="flex flex-wrap items-center gap-2">
-			{#each technologies as tech (tech.name)}
-				<Tag variant={tech.primary ? 'highlight' : 'default'} size="sm">
-					{tech.name}
-				</Tag>
 			{/each}
 		</div>
-	</div>
 
-	<!-- System Environment Metadata -->
-	<div
-		class="flex flex-wrap items-center gap-2 font-mono text-[11px] text-text-muted select-none"
-		aria-label="System Metadata"
-	>
-		<span>main</span>
-		<span class="text-border" aria-hidden="true">•</span>
-		<span>Go</span>
-		<span class="text-border" aria-hidden="true">•</span>
-		<span>Backend</span>
-		<span class="text-border" aria-hidden="true">•</span>
-		<span>Payments</span>
-		<span class="text-border" aria-hidden="true">•</span>
-		<span>Chennai, IN</span>
+		<!-- Technologies & System Metadata Strip -->
+		<div class="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center sm:justify-between">
+			<div class="flex flex-wrap items-center gap-2">
+				<span class="mr-1 font-mono text-[11px] tracking-wider text-text-muted uppercase">
+					Stack:
+				</span>
+				{#each technologies as tech (tech.name)}
+					<Tag variant={tech.primary ? 'highlight' : 'default'} size="sm">
+						{tech.name}
+					</Tag>
+				{/each}
+			</div>
+
+			<div
+				class="flex flex-wrap items-center gap-2 font-mono text-[11px] text-text-muted select-none"
+				aria-label="System Metadata"
+			>
+				<span>main</span>
+				<span class="text-border" aria-hidden="true">•</span>
+				<span>Go</span>
+				<span class="text-border" aria-hidden="true">•</span>
+				<span>Payments</span>
+				<span class="text-border" aria-hidden="true">•</span>
+				<span>Chennai, IN</span>
+			</div>
+		</div>
 	</div>
 </section>
