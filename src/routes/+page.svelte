@@ -1,42 +1,69 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
-	import { Button, StatusBadge, Tag, ArrowRightIcon } from '$lib';
+	import { Hero, Tag } from '$lib';
+
+	const remainingSections = [
+		{
+			id: 'experience',
+			title: 'Experience Section',
+			desc: 'Career history and engineering impact (upcoming issue).'
+		},
+		{
+			id: 'projects',
+			title: 'Projects Section',
+			desc: 'Distributed systems repositories and architecture (upcoming issue).'
+		},
+		{
+			id: 'stack',
+			title: 'Stack Section',
+			desc: 'stack.yaml technical runtimes and infrastructure (upcoming issue).'
+		},
+		{
+			id: 'background',
+			title: 'Background Section',
+			desc: 'Academic foundation and certifications (upcoming issue).'
+		},
+		{
+			id: 'contact',
+			title: 'Contact Section',
+			desc: 'Terminal-styled contact interface (upcoming issue).'
+		}
+	];
 </script>
 
 <svelte:head>
-	<title>Portfolio v2 — Theme & Reusable Components</title>
+	<title>Vignesh S — Backend Software Engineer</title>
 </svelte:head>
 
-<main
-	class="flex min-h-screen flex-col items-center justify-center space-y-6 bg-background p-6 text-center text-text-primary"
->
-	<div class="flex items-center gap-2">
-		<StatusBadge
-			status="healthy"
-			label="Branch: feat/3-theme-and-reusable-components"
-			pulse={true}
-		/>
-		<Tag variant="accent">In Review</Tag>
-	</div>
+<main class="mx-auto max-w-5xl space-y-16 px-4 py-8 sm:px-8 sm:py-12">
+	<!-- Section 01: Hero / Engineering Workspace -->
+	<Hero />
 
-	<h1
-		class="max-w-2xl font-sans text-4xl font-semibold tracking-tight text-text-strong sm:text-5xl"
-	>
-		Theme Colors & Reusable Components
-	</h1>
+	<!-- Remaining Sections Anchor Targets (for navbar scrollspy & upcoming features) -->
+	<section class="space-y-6 pt-4">
+		<div class="border-b border-divider pb-2">
+			<span class="font-mono text-xs font-semibold tracking-wider text-text-muted uppercase">
+				Upcoming Portfolio Sections
+			</span>
+		</div>
 
-	<p class="max-w-xl text-base text-text-muted">
-		The design tokens, color surfaces, and atomic reusable components are ready for inspection and
-		testing.
-	</p>
-
-	<div class="flex flex-wrap items-center justify-center gap-4 pt-2">
-		<Button href={resolve('/demo/components')} variant="primary" size="lg">
-			<span>Open Components Showcase</span>
-			<ArrowRightIcon size={16} />
-		</Button>
-		<Button href={resolve('/demo')} variant="secondary" size="lg">
-			<span>Explore All Demos</span>
-		</Button>
-	</div>
+		<div class="space-y-4">
+			{#each remainingSections as section (section.id)}
+				<div
+					id={section.id}
+					class="scroll-mt-24 space-y-2 rounded-[6px] border border-border bg-surface-primary/40 p-6 transition-colors duration-150 hover:bg-surface-primary/70"
+				>
+					<div class="flex items-center justify-between">
+						<span class="font-mono text-xs text-accent">#{section.id}</span>
+						<Tag variant="default" size="sm">upcoming section</Tag>
+					</div>
+					<h2 class="font-sans text-base font-semibold text-text-primary">
+						{section.title}
+					</h2>
+					<p class="text-sm text-text-secondary">
+						{section.desc}
+					</p>
+				</div>
+			{/each}
+		</div>
+	</section>
 </main>

@@ -21,23 +21,23 @@
 </script>
 
 <div
-	class="flex flex-col overflow-hidden rounded-lg border border-neutral-800 bg-code-surface font-mono text-[12px] text-on-dark shadow-card sm:text-[13px] {className}"
+	class="flex flex-col overflow-hidden rounded-[6px] border border-border bg-canvas-secondary font-mono text-[12px] text-text-code shadow-card sm:text-[13px] {className}"
 	{...restProps}
 >
 	<!-- Terminal Header / Titlebar -->
 	<div
-		class="flex items-center justify-between gap-3 border-b border-neutral-800 bg-neutral-900/90 px-4 py-2.5 select-none"
+		class="flex items-center justify-between gap-3 border-b border-divider bg-surface-primary px-4 py-2.5 select-none"
 	>
 		<div class="flex items-center gap-2">
 			<!-- Window dots -->
 			<div class="flex items-center gap-1.5" aria-hidden="true">
-				<span class="inline-block h-2.5 w-2.5 rounded-full bg-[#ef4444]/90"></span>
-				<span class="inline-block h-2.5 w-2.5 rounded-full bg-[#f59e0b]/90"></span>
-				<span class="inline-block h-2.5 w-2.5 rounded-full bg-[#10b981]/90"></span>
+				<span class="inline-block h-2.5 w-2.5 rounded-full bg-[#c98373]/80"></span>
+				<span class="inline-block h-2.5 w-2.5 rounded-full bg-[#a3907c]/80"></span>
+				<span class="inline-block h-2.5 w-2.5 rounded-full bg-[#78c990]/80"></span>
 			</div>
 
 			{#if title}
-				<span class="ml-2 truncate text-[11px] font-medium text-neutral-400 sm:text-[12px]">
+				<span class="ml-2 truncate text-[11px] font-medium text-text-muted sm:text-[12px]">
 					{title}
 				</span>
 			{/if}
@@ -60,7 +60,7 @@
 	<!-- Optional footer -->
 	{#if footer}
 		<div
-			class="flex flex-wrap items-center justify-between gap-4 border-t border-neutral-800/80 bg-neutral-900/80 px-4 py-2 text-[11px] text-neutral-400 select-none"
+			class="flex flex-wrap items-center justify-between gap-4 border-t border-divider bg-surface-primary px-4 py-2 text-[11px] text-text-muted select-none"
 		>
 			{@render footer()}
 		</div>

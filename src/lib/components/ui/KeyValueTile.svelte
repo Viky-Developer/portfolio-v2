@@ -13,13 +13,13 @@
 </script>
 
 <div
-	class="flex flex-col justify-between gap-1 rounded-lg border border-border-subtle bg-surface-lowest p-4 shadow-card transition-shadow duration-150 {className}"
+	class="flex flex-col justify-between gap-1.5 rounded-[6px] border border-border bg-surface-primary p-4 shadow-card transition-shadow duration-150 {className}"
 >
-	<span class="font-mono text-[11px] font-medium tracking-[0.02em] text-text-subtle uppercase">
+	<span class="font-mono text-[11px] font-medium tracking-[0.02em] text-text-muted uppercase">
 		{label}
 	</span>
 
-	<div class="font-sans text-[15px] font-semibold text-text-strong tabular-nums">
+	<div class="font-sans text-[15px] font-semibold text-text-primary tabular-nums">
 		{#if children}
 			{@render children()}
 		{:else}
@@ -28,7 +28,7 @@
 	</div>
 
 	{#if subtext}
-		<span class="text-[12px] text-text-muted tabular-nums">
+		<span class="text-[12px] text-text-secondary tabular-nums">
 			{subtext}
 		</span>
 	{/if}

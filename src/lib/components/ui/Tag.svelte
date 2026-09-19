@@ -12,11 +12,11 @@
 	let { variant = 'default', size = 'sm', class: className = '', children }: Props = $props();
 
 	const variantClasses: Record<TagVariant, string> = {
-		default: 'bg-surface-container text-text-muted border border-transparent',
-		highlight: 'bg-code-surface text-on-dark border border-neutral-800 font-medium',
-		get: 'bg-blue-50 text-blue-700 border border-blue-200/60 font-semibold',
-		post: 'bg-emerald-50 text-emerald-700 border border-emerald-200/60 font-semibold',
-		accent: 'bg-sky-50 text-accent border border-sky-200/60 font-medium'
+		default: 'bg-surface-elevated text-text-secondary border border-border',
+		highlight: 'bg-surface-primary text-accent border border-accent/40 font-medium',
+		get: 'bg-surface-elevated text-text-code border border-border font-medium',
+		post: 'bg-surface-elevated text-status-success border border-status-success/40 font-medium',
+		accent: 'bg-surface-elevated text-accent border border-accent/40 font-medium'
 	};
 
 	const sizeClasses: Record<TagSize, string> = {

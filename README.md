@@ -1,42 +1,62 @@
-# sv
+# Vignesh S — Portfolio v2
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A high-performance personal engineering workspace portfolio built with **SvelteKit**, **Svelte 5 (Runes)**, **TypeScript**, and **Tailwind CSS v4**, engineered around the **Deep Forest / Charcoal / Warm Cream** visual identity.
 
-## Creating a project
+---
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Features & Architecture
+
+- **Svelte 5 Runes**: Modern reactive primitives (`$state`, `$props`, `$derived`, snippets) without legacy Svelte 4 reactivity.
+- **Deep Forest Design System**:
+  - **Near-Black Forest Canvas**: `#07110D` (main), `#0A1712` (secondary).
+  - **Dark Moss Surfaces**: `#0D1B15` (primary surface), `#11231B` (elevated surface).
+  - **Editorial Typography**: Warm Cream (`#F0EBDD` primary), Soft Stone (`#B8B9AE` body), JetBrains Mono for monospace code and labels.
+  - **Restrained Accents**: Soft Sage (`#8BCB9B`) interactive accents (~3% density rule).
+  - **Operational Status**: Operational Green (`#78C990`), Muted Terracotta (`#C98373`).
+- **Responsive Navigation Bar**:
+  - Clean brand mark (`VIGNESH.DEV`).
+  - Active section scrollspy with Soft Sage underline.
+  - Single-line responsive Resume CTA button (`Resume ↓`) optimized across mobile, 768px tablet, and desktop viewports.
+  - Accessible slide-over drawer on mobile with backdrop blur.
+- **Atomic Reusable UI Components** (`src/lib/components/ui/`):
+  - `Button`, `Card`, `Tag`, `SectionHeader`, `KeyValueTile`, `CodePanel`, `StatusBadge`.
+- **Demo Routes & Testing Suites**:
+  - `/demo/components`: Interactive visual test suite for all design tokens and atomic components.
+  - `/demo/portfolio`: Layout preview of full portfolio sections.
+  - `/demo/playwright`: Baseline automated E2E testing route.
+
+---
+
+## Development & Verification
 
 ```sh
-# create a new project
-npx sv create my-app
-```
+# Install dependencies
+npm install
 
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-npx sv@0.17.0 create --template minimal --types ts --add prettier eslint vitest="usages:unit" playwright tailwindcss="plugins:none" sveltekit-adapter="adapter:auto" ai-tools="ide:vscode+tools:mcp+mcpSetup:local" --install npm .
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+# Start development server
 npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+# Run type check
+npm run check
 
-## Building
+# Run unit tests
+npm run test:unit -- --run
 
-To create a production version of your app:
+# Format and lint
+npm run format
+npm run lint
 
-```sh
+# Validate project structure
+npm run validate:structure
+
+# Build for production
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+---
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Branching & Commit Workflow
+
+- **Branch naming**: `feat/<issue-number>-<description>` or `fix/<issue-number>-<description>`
+- **Commit convention**: Conventional Commits (e.g., `feat(#5): 🎨 implement responsive navbar`)
+- Pre-commit & commit-msg hooks enforced via **Husky**.
