@@ -21,9 +21,8 @@ export default defineConfig({
 				strict: true
 			}),
 			paths: {
-				base: (process.argv.includes('dev')
-					? ''
-					: process.env.BASE_PATH || '/vignesh-portfolio') as '' | `/${string}`
+				base: (process.argv.includes('dev') ? '' : process.env.BASE_PATH || '/portfolio-v2') as
+					'' | `/${string}`
 			}
 		})
 	],
