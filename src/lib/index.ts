@@ -4,5 +4,6 @@ export * from './features/hero';
 export * from './features/about';
 export * from './features/experience';
 export * from './features/projects';
+export * from './features/stack';
 export * from './types/theme';
 export * from './constants/theme';

@@ -22,3 +22,4 @@ export { default as TerminalIcon } from './icons/TerminalIcon.svelte';
 export { default as CheckIcon } from './icons/CheckIcon.svelte';
 export { default as MenuIcon } from './icons/MenuIcon.svelte';
 export { default as CloseIcon } from './icons/CloseIcon.svelte';
+export { default as CopyIcon } from './icons/CopyIcon.svelte';
