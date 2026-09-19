@@ -97,17 +97,19 @@
 		</div>
 
 		{#snippet footer()}
-			<div class="flex w-full min-w-0 flex-wrap items-center justify-between gap-2 text-[11px]">
-				<div class="flex flex-wrap items-center gap-2 sm:gap-3">
-					<span>format: <span class="text-accent">YAML</span></span>
-					<span>•</span>
-					<span>schema: <span class="text-text-secondary">v1.0.0</span></span>
-					<span>•</span>
-					<span>encoding: <span class="text-text-secondary">UTF-8</span></span>
+			<div class="flex w-full min-w-0 items-center justify-between gap-2 text-[11px]">
+				<div class="flex min-w-0 items-center gap-1.5 truncate text-text-muted sm:gap-2.5">
+					<span>schema: <span class="font-medium text-text-secondary">v1.0.0</span></span>
+					<span class="text-text-muted/40" aria-hidden="true">·</span>
+					<span
+						><span class="hidden sm:inline">encoding: </span><span class="text-text-secondary"
+							>UTF-8</span
+						></span
+					>
 				</div>
 				<div class="flex shrink-0 items-center gap-1.5">
-					<span class="bg-status-active inline-block h-1.5 w-1.5 rounded-full"></span>
-					<span class="text-status-active font-medium">valid config</span>
+					<span class="inline-block h-1.5 w-1.5 rounded-full bg-status-success"></span>
+					<span class="font-medium text-status-success">valid config</span>
 				</div>
 			</div>
 		{/snippet}

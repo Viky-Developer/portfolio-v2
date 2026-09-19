@@ -19,6 +19,7 @@ export const stackCategories: StackCategory[] = [
 			{ name: 'Microservices', isPrimary: false },
 			{ name: 'Distributed Systems', isPrimary: false },
 			{ name: 'Event-Driven Architecture', isPrimary: false },
+			{ name: 'gRPC', isPrimary: false },
 			{ name: 'REST APIs', isPrimary: false },
 			{ name: 'Clean Architecture', isPrimary: false },
 			{ name: 'CQRS', isPrimary: false }
@@ -86,14 +87,26 @@ export const stackCategories: StackCategory[] = [
 		]
 	},
 	{
+		id: 'frontend',
+		title: 'Frontend & UI Tooling',
+		description: 'Interactive dashboards, API client consoles, and modern web interfaces',
+		items: [
+			{ name: 'TypeScript', isPrimary: true },
+			{ name: 'Svelte / SvelteKit', isPrimary: false },
+			{ name: 'React', isPrimary: false },
+			{ name: 'Tailwind CSS', isPrimary: false }
+		]
+	},
+	{
 		id: 'languages',
 		title: 'Programming Languages',
 		description: 'Systems languages, scripting, and enterprise backend platforms',
 		items: [
 			{ name: 'Go', isPrimary: true },
-			{ name: 'Java', isPrimary: false },
-			{ name: 'SQL', isPrimary: false },
+			{ name: 'TypeScript', isPrimary: false },
 			{ name: 'JavaScript', isPrimary: false },
+			{ name: 'SQL', isPrimary: false },
+			{ name: 'Java', isPrimary: false },
 			{ name: 'Lua', isPrimary: false }
 		]
 	},
@@ -113,6 +126,7 @@ export const stackYamlContent = `backend:
     - Microservices
     - Distributed Systems
     - Event-Driven Architecture
+    - gRPC
     - REST APIs
     - Clean Architecture
     - CQRS
@@ -155,6 +169,14 @@ security:
   - AES-256
   - AWS KMS
   - JWT
+
+frontend:
+  role: "Secondary / UI & Tooling"
+  technologies:
+    - Svelte / SvelteKit
+    - React
+    - TypeScript
+    - Tailwind CSS
 
 practices:
   - TDD

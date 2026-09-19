@@ -10,11 +10,12 @@ describe('Stack Section Specifications & Contracts', () => {
 		expect(categoryIds).toContain('infrastructure');
 		expect(categoryIds).toContain('messaging');
 		expect(categoryIds).toContain('security');
+		expect(categoryIds).toContain('frontend');
 		expect(categoryIds).toContain('languages');
 		expect(categoryIds).toContain('practices');
 	});
 
-	it('specifies Go as primary backend language and microservices architecture', () => {
+	it('specifies Go as primary backend language, gRPC, and microservices architecture', () => {
 		const backend = stackCategories.find((c) => c.id === 'backend');
 		expect(backend).toBeDefined();
 		const go = backend?.items.find((i) => i.name === 'Go');
@@ -25,6 +26,7 @@ describe('Stack Section Specifications & Contracts', () => {
 		expect(itemNames).toContain('Microservices');
 		expect(itemNames).toContain('Distributed Systems');
 		expect(itemNames).toContain('Event-Driven Architecture');
+		expect(itemNames).toContain('gRPC');
 		expect(itemNames).toContain('REST APIs');
 		expect(itemNames).toContain('Clean Architecture');
 		expect(itemNames).toContain('CQRS');
@@ -83,9 +85,23 @@ describe('Stack Section Specifications & Contracts', () => {
 		expect(secItems).toContain('JWT');
 	});
 
+	it('specifies frontend and UI tooling capabilities', () => {
+		const frontend = stackCategories.find((c) => c.id === 'frontend');
+		expect(frontend).toBeDefined();
+		const items = frontend?.items.map((i) => i.name);
+		expect(items).toContain('TypeScript');
+		expect(items).toContain('Svelte / SvelteKit');
+		expect(items).toContain('React');
+		expect(items).toContain('Tailwind CSS');
+	});
+
 	it('contains valid and complete stack.yaml content matching design.md', () => {
 		expect(stackYamlContent).toContain('backend:');
 		expect(stackYamlContent).toContain('primary: Go');
+		expect(stackYamlContent).toContain('gRPC');
+		expect(stackYamlContent).toContain('frontend:');
+		expect(stackYamlContent).toContain('Svelte / SvelteKit');
+		expect(stackYamlContent).toContain('React');
 		expect(stackYamlContent).toContain('provider: AWS');
 		expect(stackYamlContent).toContain('messaging:\n  - RabbitMQ');
 		expect(stackYamlContent).toContain('practices:\n  - TDD');

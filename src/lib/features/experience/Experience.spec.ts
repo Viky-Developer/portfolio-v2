@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import { contactDetails } from '$lib/features/contact';
 
 describe('Experience Section Specifications & Contracts', () => {
 	const experienceContract = {
@@ -56,5 +57,9 @@ describe('Experience Section Specifications & Contracts', () => {
 		expect(previousRole?.technologies).toContain('RabbitMQ');
 		expect(previousRole?.keyMetrics).toContain('40% ↓');
 		expect(previousRole?.keyMetrics).toContain('80%+');
+	});
+
+	it('verifies disbursements and collections are highlighted in contact and experience domains', () => {
+		expect(contactDetails.focus).toContain('disbursements & collections');
 	});
 });

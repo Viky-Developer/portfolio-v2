@@ -16,6 +16,7 @@
 		};
 		features: string[];
 		githubUrl: string;
+		liveUrl?: string;
 		hasInteractiveConsole?: boolean;
 	}
 
@@ -23,12 +24,21 @@
 		{
 			id: 'url-shortener',
 			index: '01',
-			name: 'url-shortener',
+			name: 'linkpulse',
 			visibility: 'public',
 			headline: 'High-concurrency URL shortening platform built with Go.',
 			description:
 				'A high-concurrency URL shortening platform with a Go backend and responsive client, designed for fast redirects, custom Base62 encoding, Redis caching, rate limiting, and asynchronous click analytics store via RabbitMQ.',
-			technologies: ['Go', 'Redis', 'PostgreSQL', 'RabbitMQ', 'REST API', 'Docker'],
+			technologies: [
+				'Go',
+				'Redis',
+				'PostgreSQL',
+				'RabbitMQ',
+				'Prometheus',
+				'Grafana',
+				'Docker',
+				'REST API'
+			],
 			metric: {
 				value: '< 10ms',
 				label: 'Redirect latency'
@@ -41,6 +51,7 @@
 				'Link expiration'
 			],
 			githubUrl: 'https://github.com/Viky-Developer/url-shortner',
+			liveUrl: 'https://linkpulse.netlify.app/',
 			hasInteractiveConsole: true
 		}
 	];
@@ -140,7 +151,20 @@
 									onclick={toggleConsole}
 									aria-expanded={isConsoleOpen}
 								>
-									<span>{isConsoleOpen ? 'Hide Request Trace ↑' : 'Explore Project →'}</span>
+									<span>{isConsoleOpen ? 'Hide Request Trace ↑' : 'View Request Trace ↓'}</span>
+								</Button>
+							{/if}
+
+							{#if project.liveUrl}
+								<Button
+									href={project.liveUrl}
+									target="_blank"
+									rel="noreferrer"
+									variant="outline"
+									size="sm"
+								>
+									<span>Live Demo</span>
+									<ExternalLinkIcon size={12} />
 								</Button>
 							{/if}
 

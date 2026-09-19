@@ -31,9 +31,10 @@
 			location: 'Chennai, India',
 			period: 'JUN 2026 — PRESENT',
 			description:
-				'Building payment orchestration and backend infrastructure in Go across payment aggregators and banking partners.',
+				'Building payment orchestration, disbursements, and collection infrastructure in Go across payment aggregators and banking partners.',
 			areas: [
 				'Go microservices',
+				'Payment collections & disbursements',
 				'Unified payment orchestration',
 				'Payment links & automated invoices',
 				'Chargeback workflows',
@@ -58,12 +59,12 @@
 			location: 'Chennai, India',
 			period: 'FEB 2024 — MAY 2026',
 			description:
-				'Built Go backend services supporting payment processing, banking integrations, payins, payouts, and merchant workflows.',
+				'Built Go backend services supporting payment processing, banking integrations, collections (payins), disbursements (payouts), and merchant workflows.',
 			areas: [
-				'15+ Go REST APIs',
+				'30+ Go REST APIs',
 				'Gin framework',
 				'Banking API integrations',
-				'Payins & payouts engine',
+				'Collections & disbursements engine (Payins / Payouts)',
 				'Webhooks & idempotency',
 				'Redis Lua scripting',
 				'Distributed locking',
@@ -93,7 +94,7 @@
 	<div class="relative pl-6 sm:pl-10 md:pl-28">
 		<!-- Continuous Timeline Vertical Line -->
 		<div
-			class="absolute top-3 bottom-4 left-2 w-[2px] bg-border sm:left-3 md:left-20"
+			class="absolute top-3 bottom-4 left-2 w-0.5 bg-border sm:left-3 md:left-20"
 			aria-hidden="true"
 		></div>
 
@@ -112,7 +113,7 @@
 
 					<!-- Git Commit Node & Branch Connector -->
 					<div
-						class="absolute top-1 -left-[23px] flex items-center sm:-left-[27px] md:-left-[39px]"
+						class="absolute top-1 -left-5.75 flex items-center sm:-left-6.75 md:-left-9.75"
 						aria-hidden="true"
 					>
 						<!-- Node Circle -->
@@ -128,7 +129,7 @@
 
 						<!-- Horizontal Git Branch Connector Line -->
 						<div
-							class="h-[2px] w-3 bg-border transition-colors duration-150 group-hover:bg-accent/40 sm:w-4 md:w-5"
+							class="h-0.5 w-3 bg-border transition-colors duration-150 group-hover:bg-accent/40 sm:w-4 md:w-5"
 						></div>
 					</div>
 
@@ -232,7 +233,7 @@
 								>
 									{#each role.metrics as metric (metric.label)}
 										<div
-											class="flex flex-col justify-between gap-1.5 rounded-[4px] border border-divider bg-surface-elevated/40 p-3"
+											class="flex flex-col justify-between gap-1.5 rounded-sm border border-divider bg-surface-elevated/40 p-3"
 										>
 											<div
 												class="font-sans text-xl font-semibold tabular-nums sm:text-2xl {metric.highlight
@@ -242,7 +243,7 @@
 												{metric.value}
 											</div>
 											<div
-												class="font-mono text-[10px] leading-snug tracking-normal break-words text-text-muted uppercase sm:text-[11px]"
+												class="font-mono text-[10px] leading-snug tracking-normal wrap-break-word text-text-muted uppercase sm:text-[11px]"
 											>
 												{metric.label}
 											</div>
@@ -257,7 +258,7 @@
 		</div>
 
 		<!-- Git History Terminal Node (Origin) -->
-		<div class="relative top-6 -left-[20px] flex items-center sm:-left-[24px] md:-left-[36px]">
+		<div class="relative top-6 -left-5 flex items-center sm:-left-6 md:-left-9">
 			<div
 				class="h-2.5 w-2.5 rounded-full border border-border bg-surface-elevated"
 				title="Timeline Origin"

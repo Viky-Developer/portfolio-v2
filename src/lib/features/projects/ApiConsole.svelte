@@ -49,7 +49,7 @@
 </script>
 
 <div
-	class="overflow-hidden rounded-[6px] border border-accent/40 bg-canvas-secondary font-mono shadow-card transition-all duration-200"
+	class="overflow-hidden rounded-md border border-accent/40 bg-canvas-secondary font-mono shadow-card transition-all duration-200"
 	role="region"
 	aria-label="Interactive URL Shortener API Console"
 >
@@ -101,7 +101,7 @@
 				</div>
 
 				<div
-					class="overflow-hidden rounded-[4px] border border-divider bg-surface-primary p-2.5 sm:p-3"
+					class="overflow-hidden rounded-sm border border-divider bg-surface-primary p-2.5 sm:p-3"
 				>
 					<div class="text-[11px] text-text-muted sm:text-[12px]">
 						<span>&#123;</span>
@@ -147,14 +147,14 @@
 				</div>
 
 				<div
-					class="overflow-x-auto rounded-[4px] border border-divider bg-surface-primary p-2.5 sm:p-3.5"
+					class="overflow-x-auto rounded-sm border border-divider bg-surface-primary p-2.5 sm:p-3.5"
 				>
 					<pre
 						class="font-mono text-[11px] leading-relaxed break-all whitespace-pre-wrap text-text-secondary sm:text-[12px]"><code
 							>&#123;
   <span class="text-text-muted">"status":</span> <span class="text-status-active">"success"</span>,
   <span class="text-text-muted">"short_url":</span> <span class="text-accent"
-								>"https://vignesh.dev/{shortUrlSuffix}"</span
+								>"https://linkpluse/{shortUrlSuffix}"</span
 							>,
   <span class="text-text-muted">"latency_ms":</span> <span class="text-text-primary">{latency}</span
 							>
@@ -191,7 +191,7 @@
 					<div class="relative flex items-center justify-between text-xs">
 						<!-- Node -->
 						<div
-							class="absolute -left-[20.5px] h-2.5 w-2.5 rounded-full border transition-colors duration-200 {isCompleted
+							class="absolute left-[-20.5px] h-2.5 w-2.5 rounded-full border transition-colors duration-200 {isCompleted
 								? 'border-accent bg-accent'
 								: isCurrent
 									? 'animate-ping border-accent bg-background'
@@ -223,9 +223,7 @@
 			</div>
 
 			<!-- Cache & Architectural Note -->
-			<div
-				class="rounded-[4px] border border-divider bg-surface-elevated/40 p-3 pt-2.5 text-[11px]"
-			>
+			<div class="rounded-sm border border-divider bg-surface-elevated/40 p-3 pt-2.5 text-[11px]">
 				<span class="font-sans text-xs leading-relaxed text-text-secondary">
 					Single-digit millisecond latency achieved via Redis memory-layer lookups, Base62
 					collision-free encoding, and asynchronous click analytics persistence via RabbitMQ.

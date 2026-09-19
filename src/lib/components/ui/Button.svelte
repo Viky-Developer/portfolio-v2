@@ -48,7 +48,7 @@
 	};
 
 	const baseClasses =
-		'inline-flex items-center justify-center whitespace-nowrap shrink-0 font-sans font-medium rounded-[4px] select-none transition-colors duration-150 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-1 focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none cursor-pointer';
+		'inline-flex items-center justify-center whitespace-nowrap shrink-0 font-sans font-medium rounded-sm select-none transition-colors duration-150 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-1 focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none cursor-pointer';
 </script>
 
 {#if href !== undefined}

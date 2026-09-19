@@ -59,32 +59,32 @@
 				Core Surfaces & Borders
 			</h3>
 			<div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6">
-				<div class="space-y-1 rounded-[6px] border border-border bg-background p-3">
+				<div class="space-y-1 rounded-md border border-border bg-background p-3">
 					<div class="h-8 rounded border border-border bg-background"></div>
 					<div class="font-mono text-[11px] font-medium text-text-primary">--background</div>
 					<div class="font-mono text-[10px] text-text-muted">#07110D</div>
 				</div>
-				<div class="space-y-1 rounded-[6px] border border-border bg-canvas-secondary p-3">
+				<div class="space-y-1 rounded-md border border-border bg-canvas-secondary p-3">
 					<div class="h-8 rounded border border-border bg-canvas-secondary"></div>
 					<div class="font-mono text-[11px] font-medium text-text-primary">--canvas-sec</div>
 					<div class="font-mono text-[10px] text-text-muted">#0A1712</div>
 				</div>
-				<div class="space-y-1 rounded-[6px] border border-border bg-surface-primary p-3">
+				<div class="space-y-1 rounded-md border border-border bg-surface-primary p-3">
 					<div class="h-8 rounded border border-border bg-surface-primary"></div>
 					<div class="font-mono text-[11px] font-medium text-text-primary">--surface-pri</div>
 					<div class="font-mono text-[10px] text-text-muted">#0D1B15</div>
 				</div>
-				<div class="space-y-1 rounded-[6px] border border-border bg-surface-elevated p-3">
+				<div class="space-y-1 rounded-md border border-border bg-surface-elevated p-3">
 					<div class="h-8 rounded border border-border bg-surface-elevated"></div>
 					<div class="font-mono text-[11px] font-medium text-text-primary">--surface-ele</div>
 					<div class="font-mono text-[10px] text-text-muted">#11231B</div>
 				</div>
-				<div class="space-y-1 rounded-[6px] border border-border bg-surface-primary p-3">
+				<div class="space-y-1 rounded-md border border-border bg-surface-primary p-3">
 					<div class="h-8 rounded bg-border"></div>
 					<div class="font-mono text-[11px] font-medium text-text-primary">--border</div>
 					<div class="font-mono text-[10px] text-text-muted">#26382F</div>
 				</div>
-				<div class="space-y-1 rounded-[6px] border border-border bg-surface-primary p-3">
+				<div class="space-y-1 rounded-md border border-border bg-surface-primary p-3">
 					<div class="h-8 rounded bg-divider"></div>
 					<div class="font-mono text-[11px] font-medium text-text-primary">--divider</div>
 					<div class="font-mono text-[10px] text-text-muted">#1B2B24</div>
@@ -95,36 +95,28 @@
 				Typography & Accent Tokens
 			</h3>
 			<div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
-				<div
-					class="flex items-center gap-3 rounded-[6px] border border-border bg-surface-primary p-3"
-				>
+				<div class="flex items-center gap-3 rounded-md border border-border bg-surface-primary p-3">
 					<span class="h-3.5 w-3.5 rounded-full bg-text-primary"></span>
 					<div>
 						<div class="font-mono text-[11px] font-semibold text-text-primary">Warm Cream</div>
 						<div class="font-mono text-[10px] text-text-muted">#F0EBDD (Primary)</div>
 					</div>
 				</div>
-				<div
-					class="flex items-center gap-3 rounded-[6px] border border-border bg-surface-primary p-3"
-				>
+				<div class="flex items-center gap-3 rounded-md border border-border bg-surface-primary p-3">
 					<span class="h-3.5 w-3.5 rounded-full bg-text-secondary"></span>
 					<div>
 						<div class="font-mono text-[11px] font-semibold text-text-primary">Soft Stone</div>
 						<div class="font-mono text-[10px] text-text-muted">#B8B9AE (Body)</div>
 					</div>
 				</div>
-				<div
-					class="flex items-center gap-3 rounded-[6px] border border-border bg-surface-primary p-3"
-				>
+				<div class="flex items-center gap-3 rounded-md border border-border bg-surface-primary p-3">
 					<span class="h-3.5 w-3.5 rounded-full bg-accent"></span>
 					<div>
 						<div class="font-mono text-[11px] font-semibold text-text-primary">Soft Sage</div>
 						<div class="font-mono text-[10px] text-text-muted">#8BCB9B (3% Accent)</div>
 					</div>
 				</div>
-				<div
-					class="flex items-center gap-3 rounded-[6px] border border-border bg-surface-primary p-3"
-				>
+				<div class="flex items-center gap-3 rounded-md border border-border bg-surface-primary p-3">
 					<span class="h-3.5 w-3.5 rounded-full bg-status-success"></span>
 					<div>
 						<div class="font-mono text-[11px] font-semibold text-text-primary">
@@ -145,7 +137,7 @@
 			description="Restrained rectangular controls with visible focus ring and Deep Forest states."
 		/>
 
-		<div class="space-y-6 rounded-[6px] border border-border bg-surface-primary p-6 shadow-card">
+		<div class="space-y-6 rounded-md border border-border bg-surface-primary p-6 shadow-card">
 			<div class="space-y-2">
 				<h4 class="font-mono text-xs tracking-wider text-text-muted uppercase">Variants</h4>
 				<div class="flex flex-wrap items-center gap-3">
@@ -155,7 +147,7 @@
 					</Button>
 					<Button variant="secondary">
 						<FileTextIcon size={14} />
-						<span>Resume ↓</span>
+						<span>Resume ↗</span>
 					</Button>
 					<Button variant="outline">
 						<GithubIcon size={14} />
@@ -207,7 +199,7 @@
 			description="Technical metadata chips and state indicators."
 		/>
 
-		<div class="space-y-6 rounded-[6px] border border-border bg-surface-primary p-6 shadow-card">
+		<div class="space-y-6 rounded-md border border-border bg-surface-primary p-6 shadow-card">
 			<div class="space-y-2">
 				<h4 class="font-mono text-xs tracking-wider text-text-muted uppercase">
 					Status Indicators
@@ -343,7 +335,7 @@
 						&#125;
 					</p>
 					<p>
-						<span class="text-text-muted">response:</span> &#123; "short_url": "vignesh.dev/a8F2k" &#125;
+						<span class="text-text-muted">response:</span> &#123; "short_url": "linkpluse/a8F2k" &#125;
 					</p>
 				</div>
 			</div>
@@ -363,7 +355,7 @@
 			description="Crisp, typed SVG icons without runtime third-party font dependency."
 		/>
 
-		<div class="rounded-[6px] border border-border bg-surface-primary p-6 shadow-card">
+		<div class="rounded-md border border-border bg-surface-primary p-6 shadow-card">
 			<div class="grid grid-cols-2 gap-4 text-center sm:grid-cols-4 md:grid-cols-8">
 				<div class="flex flex-col items-center gap-2 rounded bg-surface-elevated p-3">
 					<GithubIcon size={20} />
