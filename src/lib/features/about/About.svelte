@@ -10,7 +10,7 @@
 	];
 </script>
 
-<section id="about" class="scroll-mt-24 space-y-6 pt-8 pb-8" aria-labelledby="about-title">
+<section id="about" class="scroll-mt-24 space-y-8" aria-labelledby="about-title">
 	<!-- Section Header: 02 / ABOUT -->
 	<SectionHeader
 		index="02"

@@ -1,12 +1,7 @@
 <script lang="ts">
-	import { Hero, About, Tag } from '$lib';
+	import { Hero, About, Experience, Tag } from '$lib';
 
 	const remainingSections = [
-		{
-			id: 'experience',
-			title: 'Experience Section',
-			desc: 'Career history and engineering impact (upcoming issue).'
-		},
 		{
 			id: 'projects',
 			title: 'Projects Section',
@@ -40,6 +35,9 @@
 
 	<!-- Section 02: About / README.md -->
 	<About />
+
+	<!-- Section 03: Experience / Git History -->
+	<Experience />
 
 	<!-- Remaining Sections Anchor Targets (for navbar scrollspy & upcoming features) -->
 	<section class="space-y-6 pt-4">

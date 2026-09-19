@@ -25,7 +25,59 @@
 	let isMobileMenuOpen = $state(false);
 	let activeSection = $state('');
 
+	function updateActiveSection() {
+		const headerOffset = 110;
+		let current = '';
+
+		for (const item of navItems) {
+			const el = document.getElementById(item.id);
+			if (!el) continue;
+
+			const rect = el.getBoundingClientRect();
+			if (rect.top <= headerOffset && rect.bottom > headerOffset) {
+				current = item.id;
+				break;
+			}
+		}
+
+		if (!current) {
+			let closestDist = Infinity;
+			for (const item of navItems) {
+				const el = document.getElementById(item.id);
+				if (!el) continue;
+				const rect = el.getBoundingClientRect();
+				if (rect.top <= headerOffset) {
+					const dist = Math.abs(rect.top - headerOffset);
+					if (dist < closestDist) {
+						closestDist = dist;
+						current = item.id;
+					}
+				}
+			}
+		}
+
+		// If user reached bottom of page, highlight the last section
+		if (
+			typeof window !== 'undefined' &&
+			window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50
+		) {
+			current = navItems[navItems.length - 1].id;
+		}
+
+		if (current) {
+			activeSection = current;
+		} else if (typeof window !== 'undefined' && window.scrollY < 120) {
+			activeSection = '';
+		}
+	}
+
+	function handleNavClick(id: string) {
+		activeSection = id;
+		closeMobileMenu();
+	}
+
 	function toggleMobileMenu() {
+		updateActiveSection();
 		isMobileMenuOpen = !isMobileMenuOpen;
 	}
 
@@ -45,27 +97,39 @@
 	}
 
 	onMount(() => {
-		const observerOptions: IntersectionObserverInit = {
-			root: null,
-			rootMargin: '-80px 0px -50% 0px',
-			threshold: 0.1
-		};
-
-		const observer = new IntersectionObserver((entries) => {
-			for (const entry of entries) {
-				if (entry.isIntersecting) {
-					activeSection = entry.target.id;
-				}
-			}
-		}, observerOptions);
-
-		for (const item of navItems) {
-			const el = document.getElementById(item.id);
-			if (el) observer.observe(el);
+		const hash = window.location.hash.replace('#', '');
+		if (hash && navItems.some((item) => item.id === hash)) {
+			activeSection = hash;
+		} else {
+			updateActiveSection();
 		}
 
+		let ticking = false;
+		const onScroll = () => {
+			if (!ticking) {
+				window.requestAnimationFrame(() => {
+					updateActiveSection();
+					ticking = false;
+				});
+				ticking = true;
+			}
+		};
+
+		const onHashChange = () => {
+			const currentHash = window.location.hash.replace('#', '');
+			if (currentHash && navItems.some((item) => item.id === currentHash)) {
+				activeSection = currentHash;
+			} else {
+				updateActiveSection();
+			}
+		};
+
+		window.addEventListener('scroll', onScroll, { passive: true });
+		window.addEventListener('hashchange', onHashChange);
+
 		return () => {
-			observer.disconnect();
+			window.removeEventListener('scroll', onScroll);
+			window.removeEventListener('hashchange', onHashChange);
 		};
 	});
 </script>
@@ -89,7 +153,12 @@
 		<!-- Center: Desktop Navigation Links -->
 		<nav class="hidden md:flex md:items-center md:gap-0.5 lg:gap-1" aria-label="Main Navigation">
 			{#each navItems as item (item.id)}
-				<NavLink href={getHref(item.id)} label={item.label} active={activeSection === item.id} />
+				<NavLink
+					href={getHref(item.id)}
+					label={item.label}
+					active={activeSection === item.id}
+					onclick={() => handleNavClick(item.id)}
+				/>
 			{/each}
 		</nav>
 
@@ -150,7 +219,7 @@
 						href={getHref(item.id)}
 						label={item.label}
 						active={activeSection === item.id}
-						onclick={closeMobileMenu}
+						onclick={() => handleNavClick(item.id)}
 						class="w-full justify-start py-2.5 text-[15px]"
 					/>
 				{/each}
