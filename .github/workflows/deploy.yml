@@ -38,7 +38,7 @@ jobs:
 
       - name: Build static site
         env:
-          BASE_PATH: '/portfolio'
+          BASE_PATH: '/portfolio-v2'
         run: npm run build
 
       - name: Setup GitHub Pages
